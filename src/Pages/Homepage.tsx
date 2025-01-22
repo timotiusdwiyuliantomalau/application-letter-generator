@@ -13,6 +13,8 @@ export default function Homepage() {
   const [countUsed, setCountUsed] = useState(0);
   const [countUsers, setCountUsers] = useState(0);
   const [user, setUser] = useState<any>(null);
+  const [isLoginModal, setIsLoginModal] = useState(true);
+
   const items = [
     "Opportunities don't happen. You create them.",
     "Choose a job you love, and you will never have to work a day in your life.",
@@ -24,12 +26,37 @@ export default function Homepage() {
     getCountUsed().then((data) => setCountUsed(data));
     getCountUsers().then((data) => setCountUsers(data));
     const data = getCookie("user");
-    data && setUser(JSON.parse(data));
+    if(data){
+      setUser(JSON.parse(data))
+      setIsLoginModal(false);
+    }
   }, []);
 
   return (
     <div className="flex flex-col justify-between gap-[8rem] text-center mx-auto relative">
       <div className="z-50 grid gap-10">
+        {isLoginModal && (
+          <>
+            <div className="bg-black opacity-70 min-h-screen w-full fixed z-20"></div>
+            <Badge className="bg-white w-1/2 h-fit absolute top-[20em] left-1/2 flex flex-col -translate-x-1/2 z-50 py-5">
+              {" "}
+              <span
+                onClick={handleGoogleSignIn}
+                className="text-2xl font-bold flex justify-center items-center gap-2 border-2 border-gray-200 p-2 rounded-xl hover:bg-gray-100 cursor-pointer"
+              >
+                Sign In <img className="w-6" src="./google_logo.webp" alt="" />
+              </span>
+              <span
+                onClick={() => {
+                  setIsLoginModal(false);
+                }}
+                className="text-gray-400 text-lg underline cursor-pointer"
+              >
+                skip for later
+              </span>{" "}
+            </Badge>
+          </>
+        )}
         <main className="bg-yellow-300 w-full flex justify-center items-center py-3 z-10 opacity-50 hover:opacity-100">
           <img className="w-12" src="./roket.gif" alt="" />
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight tablet:text-5xl">
@@ -119,7 +146,8 @@ export default function Homepage() {
             </div>
             <a href="/#/generate">
               <Button className="bg-blue-500 text-white text-2xl">
-                GENERATE NOW<img className="w-12" src="./generate-roket.gif" alt="" />
+                GENERATE NOW
+                <img className="w-12" src="./generate-roket.gif" alt="" />
               </Button>
             </a>
           </Badge>

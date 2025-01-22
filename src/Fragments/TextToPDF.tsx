@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { jsPDF } from "jspdf";
 import { useSelector } from "react-redux";
 import { RootState } from "store";
+import { Badge } from "@/components/ui/badge";
 
 const TextToPDF = () => {
     const textPDF = useSelector((state: RootState) => state.slice.textPDF);
+    const [isDownload,setIsDownload]=useState(false);
     useEffect(() => {
         if(textPDF.length>0){
               // Buat instance jsPDF
@@ -26,11 +28,16 @@ const TextToPDF = () => {
 
     // Unduh file PDF
     doc.save("CoverLetter.pdf");
+
+    setIsDownload(true);
         }
     },[textPDF])
 
   return (
     <div>
+      {isDownload&&(
+        <Badge className="top-5 left-1/2 -translate-x-1/2 text-xl px-3 z-50 bg-green-400 fixed flex gap-3">PDF HAS BEEN DOWNLOAD <span className="text-sm -mt-3 cursor-pointer" onClick={()=>setIsDownload(false)}>X</span></Badge>
+      )}
     </div>
   );
 };

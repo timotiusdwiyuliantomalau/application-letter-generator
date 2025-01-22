@@ -27,7 +27,7 @@ export default function ReviewUser() {
   }, []);
 
   const handleReview = () => {
-    if(!user) return alert("You must Sign In Google to submit review!") ;
+    if(!user) return alert("YOU MUST SIGN IN GOOGLE TO SUBMIT REVIEW!") ;
     addReview({
       review: textReview,
       user: { name: user.displayName, photo: user.photoURL },

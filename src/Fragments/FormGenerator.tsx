@@ -27,6 +27,8 @@ import { Textarea } from "@/components/ui/textarea";
 export default function GeneratorPage() {
   const defaultValues: any = {};
   const objectSchema: any = [];
+  const [isLoading,setIsLoading]=useState(false);
+
   const [experienceHistories, setExperienceHistories] = useState([
     [
       { name: "jenis_pengalaman", placeholder: "Type of Experience" },
@@ -94,16 +96,25 @@ export default function GeneratorPage() {
 
   const dispatch = useDispatch<AppDispatch>();
   const onSubmit = (data: any) => {
+    setIsLoading(true);
     experienceHistories.forEach((field, i) => {
       field;
       data["durasi_pengalaman" + (i + 1)] =
         data["durasi_pengalaman" + (i + 1)] + "bulan";
     });
-    console.log(data);
     dispatch(setFormValue(data)); // Menampilkan nilai form
+    setTimeout(()=>{setIsLoading(false)},3000)
   };
+
   return (
     <div className="w-3/4 z-10 text-xl">
+       {isLoading && (
+          <>
+            <div className="bg-black opacity-70 min-h-screen w-full fixed top-0 left-0 z-20"></div>
+            <img className="w-72 fixed left-1/2 -translate-x-1/2 z-50" src="./roket.gif" alt="" />
+            
+          </>
+        )}
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
