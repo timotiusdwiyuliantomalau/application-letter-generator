@@ -314,7 +314,7 @@ export default function GeneratorPage() {
             +
           </Button>
 
-          <Button type="submit" className="font-bold bg-blue-500 text-white text-xl">GENERATE APPLICATION JOB <img className="w-12" src="./generate-roket.gif" alt="" /></Button>
+          <Button type="submit" className="font-bold bg-blue-500 text-white text-xl">GENERATE NOW<img className="w-12" src="./generate-roket.gif" alt="" /></Button>
         </form>
       </Form>
     </div>
