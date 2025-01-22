@@ -33,7 +33,7 @@ export default function Homepage() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-between gap-[8rem] text-center mx-auto relative">
+    <div className="flex flex-col justify-between gap-[8rem] text-center mx-auto relative overflow-hidden">
       <div className="z-50 grid gap-10">
         {isLoginModal && (
           <>
@@ -160,7 +160,7 @@ export default function Homepage() {
         <AbstractShape />
       </div>
 
-      <main className="w-1/2 self-center">
+      <main className="tablet:w-3/4 p-7 self-center">
         <span className="font-caveat italic text-xl flex flex-col">
           <WavesIcon className="text-black" />
           <p className="text-3xl">
