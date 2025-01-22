@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Homepage from './Pages/Homepage';
 import GeneratorPage from './Pages/GeneratorPage';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   { path: "/", element: <Homepage /> },
-  { path: "/generate", element: <GeneratorPage /> }
+  { path: "/generate", element: <GeneratorPage/> }
 ]);
 
 const App = () => {

@@ -117,7 +117,7 @@ export default function Homepage() {
                 </svg>
               </div>
             </div>
-            <a href="/generate">
+            <a href="/#/generate">
               <Button className="bg-blue-500 text-white text-2xl">
                 GENERATE NOW<img className="w-12" src="./generate-roket.gif" alt="" />
               </Button>
