@@ -57,7 +57,7 @@ export default function Homepage() {
             </Badge>
           </>
         )}
-        <main className="bg-yellow-300 w-full flex justify-center items-center py-3 z-10 opacity-50 hover:opacity-100">
+        <main className="bg-yellow-300 w-full flex justify-center items-center py-3 z-10 opacity-90 hover:opacity-100">
           <img className="w-12" src="./roket.gif" alt="" />
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight tablet:text-5xl">
             My-AL
