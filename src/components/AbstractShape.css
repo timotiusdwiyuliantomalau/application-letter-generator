@@ -1,0 +1,53 @@
+.abstract-shape-container {
+    position: relative;
+    width: 500px; /* Adjust to a reasonable width */
+    height: 400px; /* Adjust to a reasonable height */
+    overflow: hidden; /* Ensure shapes don’t go outside */
+  }
+  
+  .abstract-box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    transform: rotate(45deg);
+    opacity: 0.8;
+  }
+  
+  .blue {
+    background-color: #007bff;
+    border-radius: 10%;
+    top: 20%;
+    left: 5%;
+  }
+  
+  .green {
+    background-color: #79e492;
+    top: 40%;
+    border-radius: 10%;
+    left: 35%;
+  }
+  
+  .red {
+    background-color: orange;
+    top: 75%;
+    left: 75%;
+    border-radius: 10%;
+  }
+  
+  .skew-box {
+    animation: float 2s infinite ease-in-out;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(45deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(45deg);
+    }
+    100% {
+      transform: translateY(0) rotate(45deg);
+    }
+  }
+  
