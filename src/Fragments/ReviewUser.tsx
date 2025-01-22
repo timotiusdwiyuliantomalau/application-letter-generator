@@ -33,7 +33,7 @@ export default function ReviewUser() {
       user: { name: user.displayName, photo: user.photoURL },
       date: dateNow,
     }).then((res) => {
-      console.log(res);
+      window.location.reload();
     });
   };
   return (

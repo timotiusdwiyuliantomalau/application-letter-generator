@@ -27,7 +27,7 @@ const TextToPDF = () => {
     );
 
     // Unduh file PDF
-    doc.save("CoverLetter.pdf");
+    doc.save("Surat Lamaran Kerja.pdf");
 
     setIsDownload(true);
         }
