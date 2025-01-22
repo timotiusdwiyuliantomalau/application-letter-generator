@@ -12,8 +12,6 @@ export async function addCountUsed() {
 }
 export async function addCountUsers(profile:any) {
     await addDoc(collection(firestore,'users'),{profile});
-    const data=await getCountUsers();
-    return {message:"Success! Account has been created!",usersCount:data}
 }
 
 export async function getCountUsers() {

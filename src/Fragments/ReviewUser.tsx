@@ -34,6 +34,7 @@ export default function ReviewUser() {
       date: dateNow,
     }).then((res) => {
       window.location.reload();
+      console.log(res);
     });
   };
   return (
