@@ -14,8 +14,9 @@ export const handleGoogleSignIn = async () => {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
     setCookie("user", JSON.stringify(user), { expires: 1 });
-    addCountUsers(JSON.stringify(user));
-    window.location.reload();
+    addCountUsers(JSON.stringify(user)).then((res) => {
+      console.log(res);
+      window.location.reload()});
   } catch (error) {
     console.error("Error signing in:", error);
   }

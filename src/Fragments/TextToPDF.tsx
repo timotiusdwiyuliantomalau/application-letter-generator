@@ -3,6 +3,7 @@ import { jsPDF } from "jspdf";
 import { useSelector } from "react-redux";
 import { RootState } from "store";
 import { Badge } from "@/components/ui/badge";
+import { addCountUsed } from "@/lib/data";
 
 const TextToPDF = () => {
     const textPDF = useSelector((state: RootState) => state.slice.textPDF);
@@ -30,6 +31,7 @@ const TextToPDF = () => {
     doc.save("Surat Lamaran Kerja.pdf");
 
     setIsDownload(true);
+    addCountUsed();
         }
     },[textPDF])
 

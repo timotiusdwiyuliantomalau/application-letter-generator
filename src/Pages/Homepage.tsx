@@ -86,11 +86,11 @@ export default function Homepage() {
           )}
         </main>
         <main className="flex flex-col gap-5 z-10 tablet:w-1/2 mx-auto p-5">
-          <Badge className="bg-red-500 flex flex-col p-5 gap-5">
-            <p className="text-3xl">
+          <Badge className="bg-red-500 flex flex-col p-5 gap-5 pb-10">
+            <p className="text-3xl w-3/4">
               a website that generates your{" "}
               <span className="relative ">
-                Application Letter <WaveLine></WaveLine>
+                Application Job Letter <WaveLine></WaveLine>
               </span>{" "}
               <span className="font-caveat italic">quickly</span>
             </p>

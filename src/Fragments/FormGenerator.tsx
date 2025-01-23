@@ -50,7 +50,7 @@ export default function GeneratorPage() {
   const companyProfile = [
     { name: "nama_perusahaan", placeholder: "Company Name" },
     { name: "alamat_perusahaan", placeholder: "Company Address" },
-    { name: "pekerjaan_dilamar", placeholder: "Job Name" },
+    { name: "pekerjaan_dilamar", placeholder: "Work Postion" },
   ];
 
   [...yourProfile, ...companyProfile].forEach((field) => {
@@ -178,7 +178,7 @@ export default function GeneratorPage() {
           </div>
 
           <div className="bg-white p-5 grid gap-4 rounded-xl">
-            <p className="text-center">Company Profile</p>
+            <p className="text-center">Your Company Goal</p>
             <div className="grid grid-cols-2 gap-3">
               {companyProfile.map((item) => (
                 <FormField
