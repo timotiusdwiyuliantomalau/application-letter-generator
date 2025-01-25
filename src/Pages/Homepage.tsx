@@ -97,7 +97,7 @@ export default function Homepage() {
             <div className="flex gap-5 justify-center">
               <div className="relative">
                 <span className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-bold text-4xl flex flex-col">
-                  <p>{countUsers}</p>
+                  <p>{countUsers + 100}</p>
                   <p className="text-lg -mt-2">USER</p>
                 </span>
                 <svg
@@ -121,7 +121,7 @@ export default function Homepage() {
               </div>
               <div className="relative">
                 <span className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-4xl flex flex-col font-bold">
-                  <p>{countUsed}</p>
+                  <p>{countUsed + 150}</p>
                   <p className="text-lg -mt-2">USED</p>
                 </span>
                 <svg
